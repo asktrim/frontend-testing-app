@@ -7,11 +7,13 @@ import Input from "./input";
 
 import "./inputcontainer.css";
 
-const InputContainer = ({ addTask }) => {
+export const InputContainer = ({ addTask }) => {
   const input = useRef();
   const [value, setValue] = useState("");
   const onClick = () => {
-    input.current.value = "";
+    if (input.current) {
+      input.current.value = "";
+    }
     addTask(value);
   };
   return (

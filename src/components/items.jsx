@@ -7,11 +7,11 @@ import Item from "./item";
 
 import "./items.css";
 
-const Items = ({ tasks, removeTask }) => {
+export const Items = ({ tasks, removeTask }) => {
   return (
     <div className="items">
-      {tasks.map((t) => (
-        <Item {...t} removeFn={removeTask} />
+      {tasks.map((t, i) => (
+        <Item {...t} removeFn={removeTask} key={`task-${i}`} />
       ))}
     </div>
   );
@@ -25,6 +25,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   removeTask,
+};
+
+Items.defaultProps = {
+  tasks: [],
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items);
