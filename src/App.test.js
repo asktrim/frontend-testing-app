@@ -1,9 +1,14 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { shallow } from "enzyme";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from "./App";
+import InputContainer from "./components/inputcontainer";
+import Items from "./components/items";
+
+describe("<App />", () => {
+  test("It renders", () => {
+    const app = shallow(<App />);
+    expect(app.find(InputContainer)).toExist();
+    expect(app.find(Items)).toExist();
+  });
 });
