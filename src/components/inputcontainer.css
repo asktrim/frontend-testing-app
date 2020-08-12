@@ -1,0 +1,8 @@
+.input_container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 20px;
+}
