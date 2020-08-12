@@ -1,7 +1,7 @@
 import React from "react";
 import "./item.css";
 
-const Item = ({ task, removeFn, id }) => {
+export const Item = ({ task, removeFn, id }) => {
   const onXClick = () => removeFn(id);
   return (
     <div className="item">
