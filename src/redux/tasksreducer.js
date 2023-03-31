@@ -1,6 +1,6 @@
 import { copyState, indexToRemove, nextId } from "../utils/reduxutils";
 
-export default (state = { tasks: [] }, action) => {
+export default (state = { tasks: [] }, action = {}) => {
   const copiedState = copyState(state.tasks);
   switch (action.type) {
     case "REMOVE_ITEM":
